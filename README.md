@@ -28,7 +28,6 @@ A comprehensive health information system for managing clients and health progra
 
 ### Setup
 
-1. Clone the repository:
+1. For further installation and setup to any particular:
 ```bash
-git clone https://github.com/yourusername/health-info-system.git
-cd health-info-system
+reach out to me and I'll take you through gladly😄
