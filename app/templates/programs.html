@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Health Programs - Health Information System{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Health Programs</h2>
+    <a href="{{ url_for('main.new_program') }}" class="btn btn-primary">Create New Program</a>
+</div>
+
+{% if programs %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for program in programs %}
+            <tr>
+                <td>{{ program.id }}</td>
+                <td>{{ program.name }}</td>
+                <td>{{ program.description }}</td>
+                <td>{{ program.start_date }}</td>
+                <td>{{ program.end_date }}</td>
+                <td>{{ program.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-info">
+    No health programs created yet.
+</div>
+{% endif %}
+{% endblock %}

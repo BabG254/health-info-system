@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Clients - Health Information System{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Clients</h2>
+    <a href="{{ url_for('main.new_client') }}" class="btn btn-primary">Register New Client</a>
+</div>
+
+{% if clients %}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Contact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.first_name }} {{ client.last_name }}</td>
+                <td>{{ client.gender }}</td>
+                <td>{{ client.date_of_birth }}</td>
+                <td>{{ client.contact_number }}</td>
+                <td>
+                    <a href="{{ url_for('main.client_profile', client_id=client.id) }}" class="btn btn-sm btn-info">View</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-info">
+    No clients registered yet.
+</div>
+{% endif %}
+{% endblock %}

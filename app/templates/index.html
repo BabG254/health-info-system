@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Health Information System{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Health Information System</h1>
+    <p class="lead">Manage clients and health programs efficiently.</p>
+    <hr class="my-4">
+    <p>Use the navigation bar above to access different features of the system.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Clients</h5>
+                <p class="card-text">Register and manage client information.</p>
+                <a href="{{ url_for('main.clients') }}" class="btn btn-primary">View Clients</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Programs</h5>
+                <p class="card-text">Create and manage health programs.</p>
+                <a href="{{ url_for('main.programs') }}" class="btn btn-primary">View Programs</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Search</h5>
+                <p class="card-text">Search for clients in the system.</p>
+                <a href="{{ url_for('main.search_clients') }}" class="btn btn-primary">Search Clients</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

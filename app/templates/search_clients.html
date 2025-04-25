@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Search Clients - Health Information System{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Search Clients</h2>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="GET" action="{{ url_for('main.search_clients') }}">
+            <div class="input-group">
+                <input type="text" class="form-control" name="query" placeholder="Search by name..." value="{{ query }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% if query %}
+    {% if clients %}
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.first_name }} {{ client.last_name }}</td>
+                    <td>{{ client.gender }}</td>
+                    <td>{{ client.date_of_birth }}</td>
+                    <td>{{ client.contact_number }}</td>
+                    <td>
+                        <a href="{{ url_for('main.client_profile', client_id=client.id) }}" class="btn btn-sm btn-info">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        No clients found matching "{{ query }}".
+    </div>
+    {% endif %}
+{% endif %}
+{% endblock %}
