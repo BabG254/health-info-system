@@ -34,5 +34,5 @@ reach out to me and I will take you through gladly😄
 ```
 
 ### Project PowerPoint Presentation
-[View the Presentation]([https://docs.google.com/presentation/d/1kY16JBugwbhupcL9kql1Fvh5Ba6WNpFL/edit?usp=sharing&ouid=109588475878739037829&rtpof=true&sd=true](https://docs.google.com/presentation/d/1kY16JBugwbhupcL9kql1Fvh5Ba6WNpFL/edit?usp=sharing&ouid=109588475878739037829&rtpof=true&sd=true))
+<a href="https://docs.google.com/presentation/d/1kY16JBugwbhupcL9kql1Fvh5Ba6WNpFL/edit?usp=sharing&ouid=109588475878739037829&rtpof=true&sd=true">View/Download the Presentation</a>
 
