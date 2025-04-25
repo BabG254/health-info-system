@@ -24,4 +24,4 @@ if __name__ == '__main__':
                 password='password123',
                 role='admin'
             )
-    app.run(debug=True)
+    app.run()
